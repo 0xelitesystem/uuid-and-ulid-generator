@@ -18,15 +18,43 @@ Single HTML file. Runs in the browser with no build step, no server, no tracking
 - Not a namespace UUID tool. It does not do v3 or v5 name-based identifiers
 - Not a registry. Nothing is stored or checked for prior use
 
-## Use it
+## Use
 
 Open the hosted page: https://0xelitesystem.github.io/uuid-and-ulid-generator/
 
 Or download `index.html` and open it in any browser. It works offline.
 
+1. Choose UUID v4 or ULID.
+2. Set how many IDs to generate (1 to 100).
+3. Click Generate.
+4. Copy a single value, or click Copy all.
+
+## Why this exists
+
+Tests, fixtures and database seeds need fresh identifiers, and copying them from a random website means trusting its generator and its tracking. This page makes them with the browser's crypto API. It is one HTML file with no tracking and no network calls, released under MIT.
+
 ## Privacy
 
 Everything runs client-side. No analytics, no cookies, no network calls, no local storage.
+
+One exception to "no local storage": your light or dark theme choice is saved in localStorage under the key `theme`. Generated IDs are not stored.
+
+## Run locally
+
+```
+git clone https://github.com/0xelitesystem/uuid-and-ulid-generator
+cd uuid-and-ulid-generator
+```
+
+Open `index.html` in any browser. Or serve the folder and visit http://localhost:8000:
+
+```
+python -m http.server 8000
+```
+
+## Build
+
+No build step. The whole tool is one `index.html` file with inline CSS and JavaScript.
 
 ## Related
 
